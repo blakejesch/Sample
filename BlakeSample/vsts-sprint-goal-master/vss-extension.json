@@ -1,0 +1,100 @@
+{
+    "manifestVersion": 1,
+    "id": "sprint-goal",
+    "name": "Sprint Goal",
+    "version": "2.0.8",
+    "publisher": "keesschollaart",
+    "public": true,
+    "helpMarkDown": "[More Information](https://github.com/keesschollaart81/vsts-sprint-goal)",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "This extension enables you to set a sprint goal",
+    "categories": [
+        "Plan and track"
+    ],
+    "tags": [
+        "sprint",
+        "goal",
+        "scrum"
+    ],
+    "content": {
+        "details": {
+            "path": "Marketplace.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
+    },
+    "screenshots": [
+        {
+            "path": "images/screenshots-vsts-sprint-goal-3.png"
+        },
+        {
+            "path": "images/screenshots-vsts-sprint-goal-4.png"
+        }
+    ],
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/keesschollaart81/vsts-sprint-goal"
+        },
+        "support": {
+            "uri": "https://github.com/keesschollaart81/vsts-sprint-goal"
+        }
+    },
+    "branding": {
+        "color": "rgb(216, 224, 240)",
+        "theme": "light"
+    },
+    "icons": {
+        "default": "images/icon.png",
+        "large": "images/icon-large.png"
+    },
+    "files": [
+        {
+            "path": "src/sprint-goal.html",
+            "addressable": true
+        },
+        {
+            "path": "src/emojipicker",
+            "addressable": true
+        },
+        {
+            "path": "images",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/applicationinsights-js",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
+            "addressable": true
+        }
+    ],
+	"contributions": [
+	{
+		"id": "BlakeJesch.HelloWorld",
+		"type": "ms.vss-web.hub",
+		"description": "Adds a 'Hello' hub to the Work hub group.",
+		"targets": [
+			"ms.vss-work-web.iteration-backlog-tabs"
+			],
+		"properties": {
+			"name": "Goal",
+			"order": 99,
+			"uri": "src/sprint-goal.html"
+		}
+	}
+],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/keesschollaart81/vsts-sprint-goal"
+    }
+}
