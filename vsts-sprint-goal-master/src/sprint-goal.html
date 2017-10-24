@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Web Context</title>
+    <script src="../node_modules/vss-web-extension-sdk/lib/VSS.SDK.js"></script>
+    <script type="text/javascript">
+        VSS.init({
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true,
+            moduleLoaderConfig: {
+                paths: {
+                    "applicationinsights-js": "node_modules/applicationinsights-js/JavaScript/JavaScriptSDK.Module/AppInsightsModule",
+                    "dataStorage": "scripts"
+                }
+            }
+        });
+
+        VSS.ready(function () {
+
+            require(["dataStorage/sprint-goal"], function (sg) {
+                var asd = new sg.SprintGoal();
+
+                VSS.notifyLoadSucceeded();
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        #vss-extension {
+            padding: 20px;
+        }
+
+        .goal,
+        .teamgoal {
+            margin-top: 20px;
+        }
+
+        #goal,
+        #teamgoal {
+            padding: 10px;
+            font-weight: bold;
+            width: 500px;
+        }
+
+        #cookieWarning {
+            border: 1px solid #f4ce42;
+            background-color: #fff2c4;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sprint-goal">
+        <div class="toolbar"></div>
+        <div id="vss-extension">
+		<h2 id="goalLabel"></h2>
+		<br><br><br>
+            <!--<div class="sprintGoalInTabLabel">
+                <input id="sprintGoalInTabLabel" type="checkbox" />
+                <label for="sprintGoalInTabLabel">Show sprint goal in tab label</label>
+                <span id="cookieWarning">This only work with when Cookies are enabled!</span>
+            </div>-->
+            <div class="goal">
+                <label>Set your goal for this sprint:</label><br/>
+                <input type="text" id="goal" data-emojiable="true"/>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
